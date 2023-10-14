@@ -13,7 +13,7 @@ namespace PCCleanerPro_spectre
         {
             var githubClient = new GitHubClient(new ProductHeaderValue("PCCleanerPro"));
             var owner = "genmashiro";
-            var repoName = "PCCleanerPro";
+            var repoName = "PCCleanerPro-spectre";
             Release latestRelease = null;
 
             try

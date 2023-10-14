@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "noQO5s1lHqjAtDNr0XpCaPI4FWMZ8vQ247zWyoJTCBk35uYE0cM5oOz6t7w7aNUhmm/fZQbAnyyqslxkdANHWA==",
+  "dgSpecHash": "gotu5lMrZ7jwgxg6McAcV8cAQYh49BosYabqHQIMYpRsLNf82z+/HyfM51YFO20moUH1MWcWz7MEycWQvkJaoA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Gen\\source\\repos\\PCCleanerPro-spectre\\PCCleanerPro-spectre.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Gen\\.nuget\\packages\\octokit\\8.1.1\\octokit.8.1.1.nupkg.sha512",
     "C:\\Users\\Gen\\.nuget\\packages\\spectre.console\\0.47.0\\spectre.console.0.47.0.nupkg.sha512",
     "C:\\Users\\Gen\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
     "C:\\Users\\Gen\\.nuget\\packages\\system.diagnostics.eventlog\\7.0.0\\system.diagnostics.eventlog.7.0.0.nupkg.sha512",

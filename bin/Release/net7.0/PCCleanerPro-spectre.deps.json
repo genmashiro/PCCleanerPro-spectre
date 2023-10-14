@@ -8,12 +8,21 @@
     ".NETCoreApp,Version=v7.0": {
       "PCCleanerPro-spectre/1.0.0": {
         "dependencies": {
+          "Octokit": "8.1.1",
           "Spectre.Console": "0.47.0",
           "System.Diagnostics.EventLog": "7.0.0",
           "System.Management": "7.0.2"
         },
         "runtime": {
           "PCCleanerPro-spectre.dll": {}
+        }
+      },
+      "Octokit/8.1.1": {
+        "runtime": {
+          "lib/netstandard2.0/Octokit.dll": {
+            "assemblyVersion": "8.1.1.0",
+            "fileVersion": "8.1.1.0"
+          }
         }
       },
       "Spectre.Console/0.47.0": {
@@ -84,6 +93,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Octokit/8.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qrRUuJSkmCht+kG4Gf01jtbzNhYbUssy99VsUYlk9d/Z3vFCRpLn7Iulh3V3OWhpWaeHfHUKTMx9VbOB1uoo/A==",
+      "path": "octokit/8.1.1",
+      "hashPath": "octokit.8.1.1.nupkg.sha512"
     },
     "Spectre.Console/0.47.0": {
       "type": "package",

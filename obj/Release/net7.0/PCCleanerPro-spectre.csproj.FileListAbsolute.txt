@@ -21,3 +21,4 @@ C:\Users\Gen\source\repos\PCCleanerPro-spectre\obj\Release\net7.0\refint\PCClean
 C:\Users\Gen\source\repos\PCCleanerPro-spectre\obj\Release\net7.0\PCCleanerPro-spectre.pdb
 C:\Users\Gen\source\repos\PCCleanerPro-spectre\obj\Release\net7.0\PCCleanerPro-spectre.genruntimeconfig.cache
 C:\Users\Gen\source\repos\PCCleanerPro-spectre\obj\Release\net7.0\ref\PCCleanerPro-spectre.dll
+C:\Users\Gen\source\repos\PCCleanerPro-spectre\bin\Release\net7.0\Octokit.dll
