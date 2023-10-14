@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "Q4/u9bEDu6hoixZ5T2FRUQJqFcM+euEzAvwcNbz5f5oq+R0/cwc+Fgb+zfl0m64OZ3sH/EgOXu2zCkanaRxx5w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Gen\\source\\repos\\PCCleanerPro-spectre\\PCCleanerPro-spectre.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Gen\\.nuget\\packages\\octokit\\8.1.1\\octokit.8.1.1.nupkg.sha512",
+    "C:\\Users\\Gen\\.nuget\\packages\\spectre.console\\0.47.0\\spectre.console.0.47.0.nupkg.sha512",
+    "C:\\Users\\Gen\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
+    "C:\\Users\\Gen\\.nuget\\packages\\system.diagnostics.eventlog\\7.0.0\\system.diagnostics.eventlog.7.0.0.nupkg.sha512",
+    "C:\\Users\\Gen\\.nuget\\packages\\system.management\\7.0.2\\system.management.7.0.2.nupkg.sha512",
+    "C:\\Users\\Gen\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512"
+  ],
+  "logs": []
+}
