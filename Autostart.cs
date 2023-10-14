@@ -54,20 +54,36 @@ namespace PCCleanerPro_spectre
 
             AnsiConsole.Write(table);
 
-            var selectionPrompt = new TextPrompt<string>("Select a startup program to delete: ");
-            var selectedProgram = AnsiConsole.Prompt(selectionPrompt);
+            var selectionPrompt = new SelectionPrompt<string>()
+                .Title("Select a startup program to delete:")
+                .PageSize(10);
 
-            switch (selectedProgram)
+            foreach (var startupProgram in startupPrograms)
             {
-                case "Delete":
-                    // Delete the startup program from the registry
-                    regKey.DeleteValue(selectedProgram);
-                    Console.WriteLine($"{selectedProgram} has been deleted from the startup programs.");
-                    break;
-                default:
-                    // Invalid selection
-                    Console.WriteLine($"Invalid selection: {selectedProgram}");
-                    break;
+                selectionPrompt.AddChoice(startupProgram.Name);
+            }
+
+            string selectedProgram = AnsiConsole.Prompt(selectionPrompt);
+
+            // Check if the selected program exists in the list of startup programs
+            var programToDelete = startupPrograms.FirstOrDefault(p => p.Name == selectedProgram);
+
+            if (programToDelete != null)
+            {
+                // Delete the selected startup program from the registry
+                regKey.DeleteValue(programToDelete.Name);
+                AnsiConsole.MarkupLine($"[green]{programToDelete.Name} has been deleted from the startup programs.[/]");
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
+                Program.ShowOptions();
+            }
+            else
+            {
+                // Invalid selection
+                AnsiConsole.MarkupLine($"[red]Invalid selection: {selectedProgram}[/]");
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
+                CleanStartup();
             }
 
             // Close the registry key
