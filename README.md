@@ -9,7 +9,6 @@ VT: https://www.virustotal.com/gui/file/d43a7580c080472cd2d00603fabadbbac24000d5
 
 ## Features
 - Clean temporary files
-- Clean prefetch
 - Clean event log files
 - Clean startup programs
 - Detect broken hard drives
@@ -17,8 +16,9 @@ VT: https://www.virustotal.com/gui/file/d43a7580c080472cd2d00603fabadbbac24000d5
 
 ## How to Use
 1. Run the PCCleanerPro-spectre.exe file as an administrator.
-2. Choose your option with arrow keys
-3. Clean your PC
+2. Wait for update
+3. Choose your option with arrow keys
+4. Clean your PC
 
 ## Requirements
 - Windows 10/11

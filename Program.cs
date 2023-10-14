@@ -84,12 +84,11 @@ namespace PCCleanerPro_spectre
                     .PageSize(10)
                     .AddChoices(new[] {
                         "1. Clean temporary files",
-                        "2. Clean prefetch",
-                        "3. Clean event log files",
-                        "4. Clean startup",
-                        "5. Detect broken hard drives",
-                        "6. Clean browser data",
-                        "7. Exit"
+                        "2. Clean event log files",
+                        "3. Clean startup",
+                        "4. Detect broken hard drives",
+                        "5. Clean browser data",
+                        "6. Exit"
                 }));
 
 
@@ -98,19 +97,16 @@ namespace PCCleanerPro_spectre
                 case "1. Clean temporary files":
                     TempFiles.DeleteTempFiles();
                     break;
-                case "2. Clean prefetch":
-                    TempFiles.DeletePrefetchFiles();
-                    break;
-                case "3. Clean event log files":
+                case "2. Clean event log files":
                     TempFiles.DeleteEventLogs();
                     break;
-                case "4. Clean startup":
+                case "3. Clean startup":
                     Autostart.CleanStartup();
                     break;
-                case "5. Detect broken hard drives":
+                case "4. Detect broken hard drives":
                     HardDrives.DetectBrokenHardDrives();
                     break;
-                case "6. Clean browser data":
+                case "5. Clean browser data":
                     BrowserJunks.CleanBrowserData();
                     break;
                 default:
