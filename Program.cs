@@ -4,6 +4,7 @@ using Octokit;
 using System.Security.Principal;
 using PCCleanerPro_spectre;
 using Spectre.Console;
+using System.Diagnostics;
 
 namespace PCCleanerPro_spectre
 {
@@ -12,6 +13,7 @@ namespace PCCleanerPro_spectre
         public static void CheckForUpdates()
         {
             var githubClient = new GitHubClient(new ProductHeaderValue("PCCleanerPro"));
+            string repoUrl = "https://github.com/genmashiro/PCCleanerPro-spectre";
             var owner = "genmashiro";
             var repoName = "PCCleanerPro-spectre";
             Release latestRelease = null;
@@ -35,7 +37,11 @@ namespace PCCleanerPro_spectre
                 {
                     if (latestVersion > currentVersion)
                     {
-                        AnsiConsole.WriteLine($"A newer version ({latestRelease.TagName}) is available.");
+                        AnsiConsole.MarkupLine($"[yellow]A newer version ({latestRelease.TagName}) is available.[/]");
+                        OpenRepositoryLink(repoUrl);
+                        Console.WriteLine();
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadKey();
                     }
                     else
                     {
@@ -49,12 +55,30 @@ namespace PCCleanerPro_spectre
                 else
                 {
                     AnsiConsole.WriteLine("Unable to parse the version from the latest release tag.");
+                    Console.WriteLine();
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey();
                 }
             }
             else
             {
                 AnsiConsole.WriteLine("Unable to check for updates at this time.");
+                Console.WriteLine();
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
             }
+        }
+
+        public static void OpenRepositoryLink(string repositoryUrl)
+        {
+            // Replace "repositoryUrl" with the actual URL of your repository
+            string url = repositoryUrl;
+
+            // Use the default system browser to open the URL
+            Process.Start(new ProcessStartInfo(url)
+            {
+                UseShellExecute = true
+            });
         }
 
         static void Main(string[] args)
