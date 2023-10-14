@@ -9,6 +9,7 @@ VT: https://www.virustotal.com/gui/file/d43a7580c080472cd2d00603fabadbbac24000d5
 
 ## Features
 - Clean temporary files
+- Clean prefetch
 - Clean event log files
 - Clean startup programs
 - Detect broken hard drives

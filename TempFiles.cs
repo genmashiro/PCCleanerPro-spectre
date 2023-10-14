@@ -46,6 +46,48 @@ namespace PCCleanerPro_spectre
             Program.ShowOptions();
         }
 
+        public static void DeletePrefetchFiles()
+        {
+            string prefetchFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "Prefetch");
+            DirectoryInfo prefetchDirectory = new DirectoryInfo(prefetchFolderPath);
+
+            if (!prefetchDirectory.Exists)
+            {
+                AnsiConsole.MarkupLine("\n[red]Prefetch directory not found.[/]");
+                return;
+            }
+
+            foreach (FileInfo file in prefetchDirectory.GetFiles())
+            {
+                try
+                {
+                    file.Delete();
+                    AnsiConsole.MarkupLine($"\n[green]Deleted file: {file.FullName}[/]");
+                }
+                catch (Exception ex)
+                {
+                    AnsiConsole.MarkupLine($"\n[red]Error deleting {file}: {ex.Message}");
+                }
+            }
+
+            foreach (DirectoryInfo subdirectory in prefetchDirectory.GetDirectories())
+            {
+                try
+                {
+                    subdirectory.Delete(true);
+                    AnsiConsole.MarkupLine($"\n[green]Deleted folder: {subdirectory.FullName}[/]");
+                }
+                catch (Exception ex)
+                {
+                    AnsiConsole.MarkupLine($"\n[red]Error deleting {subdirectory}: {ex.Message}");
+                }
+            }
+
+            AnsiConsole.MarkupLine("\nPrefetch files and folders have been deleted.");
+            Thread.Sleep(1000);
+            Program.ShowOptions();
+        }
+
         public static void DeleteEventLogs()
         {
             try
