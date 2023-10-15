@@ -30,7 +30,7 @@ namespace PCCleanerPro_spectre
 
             if (latestRelease != null)
             {
-                Version currentVersion = new Version("0.0.3"); // Replace with your program's current version
+                Version currentVersion = new Version("0.0.4"); // Replace with your program's current version
 
                 Version latestVersion;
                 if (Version.TryParse(latestRelease.TagName, out latestVersion))
@@ -47,8 +47,8 @@ namespace PCCleanerPro_spectre
                     {
                         AnsiConsole.MarkupLine("[green]You are using the latest version.[/]");
                         Console.WriteLine();
-                        AnsiConsole.MarkupLine("[bold]Please wait 5 sec...[/]");
-                        Thread.Sleep(5000);
+                        AnsiConsole.MarkupLine("[bold]Please wait 3 sec...[/]");
+                        Thread.Sleep(3000);
                         ShowOptions();
                     }
                 }
@@ -100,7 +100,7 @@ namespace PCCleanerPro_spectre
                     .LeftJustified()
                     .Color(Color.Red));
 
-            AnsiConsole.WriteLine($"\nWelcome to PCCleanerPro v0.0.3, {Environment.UserName}");
+            AnsiConsole.WriteLine($"\nWelcome to PCCleanerPro v0.0.4, {Environment.UserName}");
 
             var framework = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()

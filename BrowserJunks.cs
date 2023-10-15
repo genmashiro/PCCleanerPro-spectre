@@ -117,7 +117,9 @@ namespace PCCleanerPro_spectre
                     AnsiConsole.MarkupLine("[green]Opera cache deleted.[/]");
                 }
             }
-            Thread.Sleep(1000);
+            Console.WriteLine();
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
             Program.ShowOptions();
         }
 
@@ -135,6 +137,7 @@ namespace PCCleanerPro_spectre
                     if (File.Exists(cookieFile))
                     {
                         File.Delete(cookieFile);
+                        AnsiConsole.MarkupLine("[green]Firefox cookies deleted.[/]");
                     }
                 }
             }
@@ -145,6 +148,7 @@ namespace PCCleanerPro_spectre
             if (File.Exists(edgeCookiesPath))
             {
                 File.Delete(edgeCookiesPath);
+                AnsiConsole.MarkupLine("[green]Edge cookies deleted.[/]");
             }
 
             // Chrome
@@ -153,6 +157,7 @@ namespace PCCleanerPro_spectre
             if (File.Exists(chromeCookiesPath))
             {
                 File.Delete(chromeCookiesPath);
+                AnsiConsole.MarkupLine("[green]Chrome cache deleted.[/]");
             }
 
             // Opera
@@ -161,9 +166,12 @@ namespace PCCleanerPro_spectre
             if (File.Exists(operaCookiesPath))
             {
                 File.Delete(operaCookiesPath);
+                AnsiConsole.MarkupLine("[green]Opera cookies deleted.[/]");
             }
 
-            Thread.Sleep(1000);
+            Console.WriteLine();
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
             Program.ShowOptions();
         }
     }

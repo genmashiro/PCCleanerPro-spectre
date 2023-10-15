@@ -22,69 +22,55 @@ namespace PCCleanerPro_spectre
                     file.Delete();
                     AnsiConsole.Write(new Markup($"\n[green]Deleted file: {file.FullName}[/]"));
                 }
+                catch (IOException ex)
+                {
+                    AnsiConsole.Write(new Markup($"\n[yellow]File {file.FullName} is in use and cannot be deleted. Skipping...[/]"));
+                }
                 catch (Exception ex)
                 {
-                    AnsiConsole.Write(new Markup($"\n[red]Error deleting {file}: {ex.Message}[/]"));
+                    AnsiConsole.Write(new Markup($"\n[red]Error deleting file {file}: {ex.Message}[/]"));
                 }
             }
 
             foreach (DirectoryInfo subdirectory in tempDirectory.GetDirectories())
             {
+                foreach (FileInfo file in subdirectory.GetFiles())
+                {
+                    try
+                    {
+                        file.Delete();
+                        AnsiConsole.Write(new Markup($"\n[green]Deleted file: {file.FullName}[/]"));
+                    }
+                    catch (IOException ex)
+                    {
+                        AnsiConsole.Write(new Markup($"\n[yellow]File {file.FullName} is in use and cannot be deleted. Skipping...[/]"));
+                    }
+                    catch (Exception ex)
+                    {
+                        AnsiConsole.Write(new Markup($"\n[red]Error deleting file {file}: {ex.Message}[/]"));
+                    }
+                }
+
+                // Delete the empty directory
                 try
                 {
                     subdirectory.Delete();
-                    AnsiConsole.Write(new Markup($"\n[green]Deleted file: {subdirectory.FullName}[/]"));
+                    AnsiConsole.Write(new Markup($"\n[green]Deleted directory: {subdirectory.FullName}[/]"));
+                }
+                catch (IOException ex)
+                {
+                    AnsiConsole.Write(new Markup($"\n[yellow]Directory {subdirectory.FullName} is in use and cannot be deleted. Skipping...[/]"));
                 }
                 catch (Exception ex)
                 {
-                    AnsiConsole.Write(new Markup($"\n[red]Error deleting {subdirectory}: {ex.Message}[/]"));
+                    AnsiConsole.Write(new Markup($"\n[red]Error deleting directory {subdirectory}: {ex.Message}[/]"));
                 }
             }
 
             AnsiConsole.WriteLine("\nTemporary files have been deleted.");
-            Thread.Sleep(1000);
-            Program.ShowOptions();
-        }
-
-        public static void DeletePrefetchFiles()
-        {
-            string prefetchFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "Prefetch");
-            DirectoryInfo prefetchDirectory = new DirectoryInfo(prefetchFolderPath);
-
-            if (!prefetchDirectory.Exists)
-            {
-                AnsiConsole.MarkupLine("\n[red]Prefetch directory not found.[/]");
-                return;
-            }
-
-            foreach (FileInfo file in prefetchDirectory.GetFiles())
-            {
-                try
-                {
-                    file.Delete();
-                    AnsiConsole.MarkupLine($"\n[green]Deleted file: {file.FullName}[/]");
-                }
-                catch (Exception ex)
-                {
-                    AnsiConsole.MarkupLine($"\n[red]Error deleting {file}: {ex.Message}");
-                }
-            }
-
-            foreach (DirectoryInfo subdirectory in prefetchDirectory.GetDirectories())
-            {
-                try
-                {
-                    subdirectory.Delete(true);
-                    AnsiConsole.MarkupLine($"\n[green]Deleted folder: {subdirectory.FullName}[/]");
-                }
-                catch (Exception ex)
-                {
-                    AnsiConsole.MarkupLine($"\n[red]Error deleting {subdirectory}: {ex.Message}");
-                }
-            }
-
-            AnsiConsole.MarkupLine("\nPrefetch files and folders have been deleted.");
-            Thread.Sleep(1000);
+            Console.WriteLine();
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
             Program.ShowOptions();
         }
 
@@ -99,13 +85,15 @@ namespace PCCleanerPro_spectre
                 }
 
                 AnsiConsole.Write(new Markup("\n[green]All logs have been cleared.[/]"));
-                Thread.Sleep(1000);
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
                 Program.ShowOptions();
             }
             catch (Exception ex)
             {
                 AnsiConsole.Write(new Markup($"\n[red]Error deleting event log: {ex.Message}[/]"));
-                Thread.Sleep(1000);
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
                 Program.ShowOptions();
             }
         }
