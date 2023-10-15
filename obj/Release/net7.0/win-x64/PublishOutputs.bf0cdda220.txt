@@ -1,2 +1,0 @@
-C:\Users\Gen\source\repos\PCCleanerPro-spectre\bin\Release\net7.0\publish\win-x64\PCCleanerPro-spectre.pdb
-C:\Users\Gen\source\repos\PCCleanerPro-spectre\bin\Release\net7.0\publish\win-x64\PCCleanerPro-spectre.exe
