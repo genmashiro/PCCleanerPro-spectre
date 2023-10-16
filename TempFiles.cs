@@ -85,6 +85,7 @@ namespace PCCleanerPro_spectre
                 }
 
                 AnsiConsole.Write(new Markup("\n[green]All logs have been cleared.[/]"));
+                Console.WriteLine();
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
                 Program.ShowOptions();
@@ -92,6 +93,7 @@ namespace PCCleanerPro_spectre
             catch (Exception ex)
             {
                 AnsiConsole.Write(new Markup($"\n[red]Error deleting event log: {ex.Message}[/]"));
+                Console.WriteLine();
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
                 Program.ShowOptions();
