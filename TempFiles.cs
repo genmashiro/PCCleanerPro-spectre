@@ -22,7 +22,7 @@ namespace PCCleanerPro_spectre
                     file.Delete();
                     AnsiConsole.Write(new Markup($"\n[green]Deleted file: {file.FullName}[/]"));
                 }
-                catch (IOException ex)
+                catch (IOException)
                 {
                     AnsiConsole.Write(new Markup($"\n[yellow]File {file.FullName} is in use and cannot be deleted. Skipping...[/]"));
                 }

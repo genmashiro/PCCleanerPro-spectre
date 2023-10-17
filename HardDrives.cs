@@ -20,8 +20,10 @@ namespace PCCleanerPro_spectre
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_DiskDrive WHERE Status='Error'");
             foreach (ManagementObject drive in searcher.Get())
             {
+                string model = drive["Model"]?.ToString() ?? "N/A";
+                string serialNumber = drive["SerialNumber"]?.ToString() ?? "N/A";
+                table.AddRow(model, serialNumber);
                 detectedBrokenHardDrive = true;
-                table.AddRow(drive["Model"].ToString(), drive["SerialNumber"].ToString());
             }
 
             if (detectedBrokenHardDrive)
