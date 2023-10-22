@@ -100,7 +100,7 @@ namespace PCCleanerPro_spectre
                     .LeftJustified()
                     .Color(Color.Red));
 
-            AnsiConsole.WriteLine($"\nWelcome to PCCleanerPro v0.0.5, {Environment.UserName}");
+            AnsiConsole.WriteLine($"\nWelcome to PCCleanerPro v0.0.4.1, {Environment.UserName}");
 
             var framework = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
