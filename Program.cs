@@ -30,7 +30,7 @@ namespace PCCleanerPro_spectre
 
             if (latestRelease != null)
             {
-                Version currentVersion = new Version("0.0.5"); // Replace with your program's current version
+                Version currentVersion = new Version("0.0.4.1"); // Replace with your program's current version
 
                 Version latestVersion;
                 if (Version.TryParse(latestRelease.TagName, out latestVersion))

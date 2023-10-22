@@ -62,6 +62,7 @@ namespace PCCleanerPro_spectre
             {
                 selectionPrompt.AddChoice(startupProgram.Name);
             }
+            selectionPrompt.AddChoice("-- Go back --");
 
             string selectedProgram = AnsiConsole.Prompt(selectionPrompt);
 
@@ -75,6 +76,10 @@ namespace PCCleanerPro_spectre
                 AnsiConsole.MarkupLine($"[green]{programToDelete.Name} has been deleted from the startup programs.[/]");
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
+                Program.ShowOptions();
+            }
+            else if (selectedProgram == "-- Go back --")
+            {
                 Program.ShowOptions();
             }
             else
